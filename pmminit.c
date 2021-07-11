@@ -1,5 +1,4 @@
 // Demon Version
-// By scitbb
 /*
  * File: pmminit.c
  * PacMan_Map_INITialization

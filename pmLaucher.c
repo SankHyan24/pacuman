@@ -2,7 +2,6 @@
  *                Pac Man                   *
  *   A SQs Project established in 2021/4/29 *
  ********************************************/
-// By scitbb
 /*
  * File: pmLauncher
  * The launcher of the "Pac Man" Program.
@@ -21,17 +20,17 @@
 #include "pmrun.h"
 #include "pmsp.h"
 //TODO:AI
-//TODO:ï¿½ï¿½ï¿½Ë½ï¿½ï¿½
-//TODO:ï¿½È¼ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½
-// ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
+//TODO:ÃëÍË½â¾ö
+//TODO:µÈ¼¶ÅÅÐÐ°ñÉè¼Æ
+// ÓÃ»§µÄ×Ö·ûÊÂ¼þÏìÓ¦º¯Êý
 void CharEventProcess(char ch)
 {
-	uiGetChar(ch); // GUIï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
+	uiGetChar(ch); // GUI×Ö·ûÊäÈë
 }
-// ï¿½Ã»ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
+// ÓÃ»§µÄ¼üÅÌÊÂ¼þÏìÓ¦º¯Êý
 void KeyboardEventProcess(int key, int event)
 {
-	uiGetKeyboard(key, event); // GUIï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
+	uiGetKeyboard(key, event); // GUI»ñÈ¡¼üÅÌ
 	if (mapifkey(key, event))
 	{
 		ifmecc = 1;
@@ -43,10 +42,10 @@ void KeyboardEventProcess(int key, int event)
 		runmvctrl = key;
 	}
 }
-// ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
+// ÓÃ»§µÄÊó±êÊÂ¼þÏìÓ¦º¯Êý
 void MouseEventProcess(int x, int y, int button, int event)
 {
-	uiGetMouse(x, y, button, event); //GUIï¿½ï¿½È¡ï¿½ï¿½ï¿½
+	uiGetMouse(x, y, button, event); //GUI»ñÈ¡Êó±ê
 	if (launchselecter == MENU_ANIM && event == BUTTON_DOWN)
 	{
 		launchselecter = MENU_MAIN;
@@ -55,14 +54,14 @@ void MouseEventProcess(int x, int y, int button, int event)
 	mouse_y = ScaleXInches(y);
 }
 
-void displaunch() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void displaunch() //Ö÷½çÃæ
 {
 	DisplayClear();
 	drawpmMenu();
 	DrawEditName();
 }
 
-void drawpmMenu() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½
+void drawpmMenu() //Ö÷½çÃæ²Ëµ¥
 {
 	SetPenColor("Purple2");
 	drawBox(0, 0, winwidth, winheight, 1, "", 's', "Black");
@@ -95,7 +94,7 @@ void drawpmMenu() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½
 	SetPointSize(13);
 }
 
-void dispgame() //ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
+void dispgame() //ÓÎÏ·½çÃæ
 {
 	DrawGamePreview();
 	SetPointSize(30);
@@ -104,7 +103,7 @@ void dispgame() //ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
 		launchselecter = MENU_ANIM;
 	}
 	if (button(GenUIID(4), winwidth * 0.6, winheight * 0.22, winwidth * 1 / 5, GetFontHeight() * 2, "Start !"))
-	{ //*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·
+	{ //*½øÈëÓÎÏ·
 		printf(" Times: %d \n", testflag);
 		energy = 0;
 		gameinit();
@@ -119,7 +118,7 @@ void dispgame() //ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
 	SetPointSize(13);
 }
 
-void disprank() // ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½
+void disprank() // ÅÅÐÐ°ñ½çÃæ
 {
 	DisplayClear();
 	DrawMenuBackG();
@@ -135,7 +134,7 @@ void disprank() // ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½
 	SetPointSize(13);
 }
 
-void dispeditor() //ï¿½ï¿½Í¼ï¿½à¼­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void dispeditor() //µØÍ¼±à¼­Æ÷½çÃæ
 {
 	mapedinit();
 	mapprint();
@@ -150,7 +149,7 @@ void dispeditor() //ï¿½ï¿½Í¼ï¿½à¼­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	SetPointSize(13);
 }
 
-void disphelp() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void disphelp() //°ïÖú½çÃæ
 {
 	SetPenColor("Purple3");
 	drawBox(0, 0, winwidth, winheight, 1, "", 's', "Black");
@@ -163,7 +162,7 @@ void disphelp() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	SetPointSize(13);
 }
 
-void disptest() //*ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¡ï¿½Ò»ï¿½ã²»ï¿½ï¿½ï¿½ï¿½
+void disptest() //*²âÊÔ½çÃæµÄÈë¿Ú¡£Ò»°ã²»µ÷ÓÃ
 {
 	double w = winwidth, h = winheight;
 	int i, j;
@@ -173,7 +172,7 @@ void disptest() //*ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¡ï¿½Ò»ï¿½ã²»ï¿½ï¿½ï¿½ï¿½
 	DrawAnima();
 }
 
-void display() //Õ¹Ê¾ï¿½ï¿½ï¿½
+void display() //Õ¹Ê¾Èë¿Ú
 {
 	setButtonColors("Purple3", "Purple1", "Purple1", "Purple3", 1);
 	DisplayClear();
@@ -215,7 +214,7 @@ void timedisp(int timeid) // Time Controller
 {
 	switch (timeid)
 	{
-	case Time_Anima: //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	case Time_Anima: //¶¯»­¿ØÖÆ
 		if (animatimer <= 2400)
 			animatimer++;
 		else
@@ -229,7 +228,7 @@ void timedisp(int timeid) // Time Controller
 	case Time_Loop:
 		if (launchselecter == MENU_GMAP)
 		{
-			if (!ifpause) // Ä§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			if (!ifpause) // Ä§¹í¸´»î
 			{
 				int cni = 0;
 				for (cni = 0; cni < 4; cni++)
@@ -289,18 +288,18 @@ void timedisp(int timeid) // Time Controller
 	}
 }
 
-void InitWindow() //ï¿½ï¿½ï¿½Ú³ï¿½Ê¼ï¿½ï¿½
+void InitWindow() //´°¿Ú³õÊ¼»¯
 {
 	SetWindowSize(25, 20);
 	InitGraphics();
 	// SetFont("Consolas");
-	SetWindowTitle("Pac Man ï¿½Ô¶ï¿½ï¿½ï¿½");
+	SetWindowTitle("Pac Man ³Ô¶¹ÈË");
 	winwidth = GetWindowWidth();
 	winheight = GetWindowHeight();
 	launchselecter = MENU_ANIM;
 }
 
-void InitMyColor() //ï¿½ï¿½É«ï¿½ï¿½Ê¼ï¿½ï¿½
+void InitMyColor() //ÑÕÉ«³õÊ¼»¯
 {
 	DefineColor("StdBg", 255.0 / 256, 0.0 / 256, 255.0 / 256);	// Standard Background
 	DefineColor("Coin1", 247.0 / 256, 211.0 / 256, 88.0 / 256); // Side color of the coin
@@ -340,17 +339,17 @@ void InitMyColor() //ï¿½ï¿½É«ï¿½ï¿½Ê¼ï¿½ï¿½
 	DefineColor("c14", 1.0 / 256, 58.0 / 256, 223.0 / 256);
 }
 
-void ConsoleTest() //ï¿½ï¿½ï¿½ï¿½×¨ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨
+void ConsoleTest() //²âÊÔ×¨ÓÃ£º¿ªÆô¼ì²â¿ØÖÆÌ¨
 {
 	InitConsole();
 }
 
-void Main() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void Main() //Ö÷º¯Êý£¬³ÌÐòµÄÈë¿Ú
 {
 	InitWindow();
 	InitMyColor();
 	////test ENTRANCE
-	//*ï¿½ï¿½ï¿½ï¿½×¨ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½
+	//*²âÊÔ×¨ÓÃÈë¿Ú£¬¸ü¸ÄÏÂÃæÄÚÈÝ½øÐÐ²âÊÔ
 	// ConsoleTest();
 	GmSts.skin = Skin_plain;
 	// startTimer(Time_Tester, 5000);
@@ -364,7 +363,7 @@ void Main() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	startTimer(Time_Ghst, 250);
 	startTimer(Time_Loop, 500);
 	startTimer(Time_Step, 10);
-	registerCharEvent(CharEventProcess);		 // ï¿½Ö·ï¿½
-	registerKeyboardEvent(KeyboardEventProcess); // ï¿½ï¿½ï¿½ï¿½
-	registerMouseEvent(MouseEventProcess);		 // ï¿½ï¿½ï¿½
+	registerCharEvent(CharEventProcess);		 // ×Ö·û
+	registerKeyboardEvent(KeyboardEventProcess); // ¼üÅÌ
+	registerMouseEvent(MouseEventProcess);		 // Êó±ê
 }

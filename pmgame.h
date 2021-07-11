@@ -1,5 +1,4 @@
 // Demon Version
-// By scitbb
 /*
  * File: pmgame.h
  * PacMan_GAME
@@ -26,26 +25,26 @@ typedef struct
     int plyvelo, ghtvelo;   // Player/Ghost Velocity
     int score, scoregoal;   // Your Score and the Goal
     char name[50];          // Your Name
-} stateofgame;              //ï¿½ï¿½Ï·ÊµÊ±ï¿½ï¿½ï¿½ï¿½
+} stateofgame;              //ÓÎÏ·ÊµÊ±Êý¾Ý
 extern stateofgame GmSts;   //Game Settings and States
-extern int scoretmp;        // ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
-extern bool ifpause;        // ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½Å¥
-extern bool ifgminit;       //ï¿½Ç·ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Í¼
-extern int durstepply;      //ï¿½ï¿½Òµï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
-extern int durstepght;      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½
-extern double tmpsts;       //ï¿½ï¿½ï¿½ê¶¯ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-extern int energy;          //ï¿½ï¿½ï¿½ï¿½Öµ
-extern ID *ghststart;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Î»ï¿½ï¿½
-extern int ghstrenewcnt[4]; //ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
+extern int scoretmp;        // ÔÝÊ±·ÖÊý
+extern bool ifpause;        // ÔÝÍ£¼ü°´Å¥
+extern bool ifgminit;       //ÊÇ·ñ³õÊ¼»¯µØÍ¼
+extern int durstepply;      //Íæ¼ÒµÄÓÎÏ·ÖÜÆÚ
+extern int durstepght;      //¹í»êµÄÓÎÏ·ÖÜÆÚ
+extern double tmpsts;       //¹í»ê¶¯»­¿ØÖÆ
+extern int energy;          //ÄÜÁ¿Öµ
+extern ID *ghststart;       // ¹íµÄÆðÊ¼Î»ÖÃ
+extern int ghstrenewcnt[4]; //¹íµÄ¸´»îÐÅÏ¢
 
-void gameinit();                                      //*ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-void gmstinit();                                      // */ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½
-void drawmap();                                       //*ï¿½ï¿½ï¿½ï¿½Map
-void dmapname();                                      //*ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-void drawlvl(double x, double y, double w, double h); //ï¿½ï¿½ï¿½ÆµÈ¼ï¿½ï¿½ï¿½
-void drawscore();                                     //ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½
-void drawEnerbar();                                   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-static void drawGstBar();                             //ï¿½ï¿½ï¿½Æ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-void loadsrc();                                       //ï¿½ï¿½ï¿½Øµï¿½Í¼Ôªï¿½ï¿½
-void disppacman();                                    //ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void gameinit();                                      //*³õÊ¼»¯µØÍ¼¼ÓÔØ£¨³õÊ¼»¯±£»¤£©
+void gmstinit();                                      // */ÓÎÏ·²ÎÊý³õÊ¼»¯/¹éÁã
+void drawmap();                                       //*»æÖÆMap
+void dmapname();                                      //*µØÍ¼Ãû³ÆÀ¸
+void drawlvl(double x, double y, double w, double h); //»æÖÆµÈ¼¶À¸
+void drawscore();                                     //»æÖÆ·ÖÊýÀ¸
+void drawEnerbar();                                   //»æÖÆÄÜÁ¿Ìõ
+static void drawGstBar();                             //»æÖÆ¹í»êÌõºÍÓÎÏ·½ø³ÌÌõ
+void loadsrc();                                       //¼ÓÔØµØÍ¼ÔªËØ
+void disppacman();                                    //ÓÎÏ·½ø³ÌÖ÷³ÌÐò
 #endif

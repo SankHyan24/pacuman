@@ -1,4 +1,3 @@
-// By scitbb
 #include "pmeditor.h"
 #include "global.h"
 #include "pmgame.h"
@@ -58,7 +57,7 @@ void mapprint()
     drawBox(0, 0, winwidth, winheight, 1, "", 's', "White");
     SetPenColor("Black");
     SetPointSize(30);
-    drawBox(winwidth * 3 / 10, 0, winwidth * 2 / 5, winheight / 12 - 0.1, 1, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½QÂ·WÇ½Eï¿½Ô¶ï¿½ï¿½ï¿½Rï¿½ï¿½", 's', "Azure");
+    drawBox(winwidth * 3 / 10, 0, winwidth * 2 / 5, winheight / 12 - 0.1, 1, "ÉÏÏÂ×óÓÒµ÷·½Ïò£¬QÂ·WÇ½E³Ô¶¹ÈËR¹í", 's', "Azure");
     SetPenColor("Black");
     drawBox(winwidth * 1 / 5, winheight * 11 / 12, winwidth * 3 / 5, winheight / 12, 1, "Map Editor", 's', "White");
     SetPointSize(13);

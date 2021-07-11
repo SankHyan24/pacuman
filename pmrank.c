@@ -1,4 +1,3 @@
-// By scitbb
 #include "pmrank.h"
 #include "global.h"
 #include "pmgame.h"
@@ -35,10 +34,10 @@ void GetRank()
             fscanf(fop, "%d", &(toplist[cnt].level));
             fscanf(fop, "%d", &(toplist[cnt].score));
             fgets(toplist[cnt].cinfo, 40, fop);
-            char *tmp = strstr(toplist[cnt].cinfo, "\n"); // È¥ï¿½ï¿½Ä©Î²ï¿½ï¿½\n
+            char *tmp = strstr(toplist[cnt].cinfo, "\n"); // È¥µôÄ©Î²µÄ\n
             if (tmp != NULL)
                 *tmp = '\0';
-            // if (cmpname(toplist[cnt].cinfo)) // ï¿½ï¿½ï¿½ÂµÈ¼ï¿½
+            // if (cmpname(toplist[cnt].cinfo)) // ¸üÐÂµÈ¼¶
             //     if (GmSts.lvl < toplist[cnt].level)
             //         GmSts.lvl = toplist[cnt].level;
             cnt++;
@@ -137,8 +136,8 @@ void AddRank()
     rknumber++;
 
     int i, j, flag;
-    for (i = 0; i < rknumber; i++)
-        for (j = 0; j < rknumber - i - 1; j++)
+    for ( i = 0; i < rknumber; i++)
+        for ( j = 0; j < rknumber - i - 1; j++)
         {
             flag = 0;
             if (toplist[j].level < toplist[j + 1].level)

@@ -1,4 +1,3 @@
-// By scitbb
 #include <math.h>
 #include <time.h>
 #include "pmanima.h"

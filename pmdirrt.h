@@ -1,5 +1,4 @@
 // Demon Version
-// By scitbb
 /*
  * File: pmdirrt.h
  * PacMan_Direction
@@ -24,7 +23,7 @@ typedef enum
     Dir_left,
     Dir_right,
     Dir_error
-} Dir; //ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½
+} Dir; //ËÄ¸ö·½Ïò
 /*
  * Function: Juge_Dir
  * Judge the direction of the 2 Vertexes by thier ID information

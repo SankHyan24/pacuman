@@ -1,5 +1,4 @@
 //
-// By scitbb
 //
 #ifndef _PMEDITOR_H_
 #define _PMEDITOR_H_
@@ -9,7 +8,7 @@
 #include "extgraph.h"
 #include "imgui.h"
 ////
-typedef enum //ï¿½ï¿½Í¼Ôªï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
+typedef enum //µØÍ¼ÔªËØµÄÀàÐÍ
 {
     mp_ROAD,
     mp_WALL,
@@ -21,11 +20,11 @@ typedef enum //ï¿½ï¿½Í¼Ôªï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½
     mp_GHST4
 } mpType;
 ////
-extern int mpedictrl;    // ï¿½ï¿½ï¿½Æµï¿½Í¼ï¿½à¼­ï¿½ï¿½
-extern bool ifmecc;      //ï¿½Ç·ñ°´¶ï¿½ï¿½ï¿½Í¼ï¿½à¼­ï¿½ï¿½ï¿½Ä°ï¿½Å¥
-extern short *mpedist;   //ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
-extern bool ifmapedinit; //ï¿½Ç·ï¿½ï¿½Í¼ï¿½à¼­ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
-extern ID mpchsps;       //ï¿½ï¿½ï¿½Î»ï¿½ï¿½
+extern int mpedictrl;    // ¿ØÖÆµØÍ¼±à¼­Æ÷
+extern bool ifmecc;      //ÊÇ·ñ°´¶¯µØÍ¼±à¼­Æ÷µÄ°´Å¥
+extern short *mpedist;   //µØÍ¼Êý×éµÄÊ×Ö¸Õë
+extern bool ifmapedinit; //ÊÇ·ñµØÍ¼±à¼­Æ÷³õÊ¼»¯
+extern ID mpchsps;       //¹â±êÎ»ÖÃ
 //
 bool mapifkey(int key, int event);
 void mapedinit();

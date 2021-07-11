@@ -1,4 +1,3 @@
-// By scitbb
 #include "pmhelp.h"
 #include "global.h"
 #include <stdlib.h>
@@ -48,211 +47,210 @@ void ForScreen(int win)
 
 void ListHelp()
 {
-	char *title[] = {"Ð´ï¿½ï¿½Ç°ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½", "ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½", "Ó¢ï¿½Û¼ï¿½ï¿½", "Ó¢ï¿½Û¼ï¿½ï¿½", "Ó¢ï¿½Û¼ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½", "ï¿½ï¿½Í¼ï¿½à¼­", "ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½", "BUGï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½"};
+	char *title[] = {"Ð´ÔÚÇ°Ãæ","»ù±¾ËµÃ÷","ÓÎÏ·±³¾°","Ó¢ÐÛ¼ò½é","Ó¢ÐÛ¼ò½é","Ó¢ÐÛ¼ò½é","ÓÄÁéÂß¼­","µØÍ¼±à¼­","µÃ·ÖÅÅÐÐ","BUGÎÊÌâ","ÏîÄ¿½áÓï"}; 
 	SetPenColor("Purple1");
 	drawRectangle(winwidth / 10.0, winheight / 10.0, winwidth * 4.0 / 5, winheight * 4.0 / 5, 1);
 	SetPenColor("White");
 	SetPointSize(40);
 	MovePen(winwidth * 12.0 / 30.0, winheight * 4 / 5.0);
-	DrawTextString(title[(page - 1) % pagenum]);
-	MovePen(winwidth / 10.0, winheight * 7.7 / 10.0);
-	DrawLine(winwidth * 4.0 / 5, 0);
-	switch (page % pagenum)
-	{
-	case 1:
-		DrawHelp1();
-		break;
-	case 2:
-		DrawHelp2();
-		break;
-	case 3:
-		DrawHelp3();
-		break;
-	case 4:
-		DrawHelp4();
-		break;
-	case 5:
-		DrawHelp5();
-		break;
-	case 6:
-		DrawHelp6();
-		break;
-	case 7:
-		DrawHelp7();
-		break;
-	case 8:
-		DrawHelp8();
-		break;
-	case 9:
-		DrawHelp9();
-		break;
-	case 10:
-		DrawHelp10();
-		break;
-	case 0:
-		DrawHelp11();
-		break;
-	}
-	SetPointSize(24);
+	DrawTextString(title[(page-1)%pagenum]);
+	MovePen(winwidth /10.0,winheight * 7.7/ 10.0);
+	DrawLine(winwidth * 4.0 /5,0);
+	switch (page%pagenum) {
+		case 1:
+			DrawHelp1();
+			break;
+		case 2:
+			DrawHelp2();
+			break;
+		case 3:
+			DrawHelp3();
+			break;
+		case 4:
+			DrawHelp4();
+			break; 
+		case 5:
+			DrawHelp5();
+			break;
+		case 6:
+			DrawHelp6(); 
+			break;
+		case 7: 
+			DrawHelp7();
+			break; 
+		case 8:
+			DrawHelp8();
+			break; 
+		case 9:
+			DrawHelp9();
+			break;
+		case 10:
+			DrawHelp10();
+			break; 
+		case 0:
+			DrawHelp11();
+			break;
+	} 
+	SetPointSize(24); 
 	setButtonColors("Purple2", "White", "Pink", "White", 1);
-	if (button(GenUIID(15), winwidth * 15 / 20.0, winheight * 8.0 / 10.0, winwidth * 1.3 / 10.0, 1.0, "ï¿½ï¿½Ò»Ò³"))
+	if (button(GenUIID(15), winwidth * 15 / 20.0, winheight * 8.0 / 10.0, winwidth * 1.3 / 10.0, 1.0, "ÏÂÒ»Ò³"))
 		page++;
-	if (button(GenUIID(15), winwidth * 5 / 20.0 - winwidth * 1.3 / 10.0, winheight * 8.0 / 10.0, winwidth * 1.3 / 10.0, 1.0, "ï¿½ï¿½Ò»Ò³"))
+	if (button(GenUIID(15), winwidth * 5 / 20.0 - winwidth * 1.3 / 10.0, winheight * 8.0 / 10.0, winwidth * 1.3 / 10.0, 1.0, "ÉÏÒ»Ò³"))
 		if (page == 0)
 			page = pagenum - 1;
 		else
 			page--;
-	setButtonColors("Blue", "Blue", "Red", "Red", 0);
+	setButtonColors("Blue", "Blue", "Red", "Red", 0); 
 }
 
 void DrawHelp1()
 {
-	char *content_1[] = {"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½Ò»ï¿½ï¿½ï¿½æ£¬Ò»ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¿ï¿½ï¿½ï¿½Å¶ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½BACKï¿½ï¿½Å¥ï¿½ï¿½ï¿½Í¿ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ¡£"};
-	char *content_2[] = {"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PAC MANï¿½É£ï¿½ï¿½ï¿½ï¿½"};
-	char *content_3[] = {"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ¡£ï¿½ï¿½ï¿½ï¿½ï¿½ã´¦ï¿½ï¿½helpï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ·½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½Ö±ï¿½ï¿½Ó¦'ï¿½ï¿½Ê¼'ï¿½ï¿½'ï¿½ï¿½ï¿½Ð°ï¿½'ï¿½ï¿½'ï¿½Ë³ï¿½'ï¿½ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½", "ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö°É£ï¿½"};
+	char *content_1[]={"Èç¹ûÄãÊÇµÚÒ»´ÎÍæ£¬Ò»¶¨Òª°ÑÕâ¸ö½éÉÜ¿´ÍêÅ¶£¡µ±È»£¬Èç","¹ûÄãÒÑ¾­¿´¹ýÁË£¬µã»÷ÓÒÏÂ½ÇBACK°´Å¥£¬¾Í¿ÉÍË³ö°ïÖú½çÃæ¡£"};
+	char *content_2[]={"»°²»¶àËµ£¬¿ìÀ´¸ú×ÅÒýµ¼À´ÍæPAC MAN°É£¬ºðºð£¡"}; 
+	char *content_3[]={"ÏÈÀ´½éÉÜÓÎÏ·µÄÖ÷½çÃæ¡£ÏÖÔÚÄã´¦ÔÚhelp½çÃæÄÚ£¬ÔÚÕâÀï","Äã¿ÉÒÔ¿´µ½ÓëÓÎÏ·±³¾°ºÍÓÎÍæ·½·¨µÄÏêÏ¸ËµÃ÷£»ÆäËüµÄÈý¸ö°´","·Ö±ð¶ÔÓ¦'¿ªÊ¼'¡¢'ÅÅÐÐ°ñ'ºÍ'ÍË³ö'¡£´ËÍâ£¬Äã¿ÉÒÔÔÚÖ÷½çÃæÉÏ·½","µÄÎÄ±¾¿òÄÚÐÞ¸ÄÄãµÄÃû×Ö¡£È¡¸öºÃÌýµÄÃû×Ö°É£¡"};
 	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 4 / 8.0);
-	SetPointSize(20);
+	SetPointSize(20); 
 	DrawTextString(content_1[0]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 3.5 / 8.0);
+	MovePen(winwidth * 3 / 20.0,winheight / 10.0 + winheight * 3.5 / 8.0);
 	DrawTextString(content_1[1]);
-	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 3.0 / 8.0);
+	MovePen(winwidth * 4 /20.0,winheight /10.0 +winheight *3.0 /8.0);  
 	DrawTextString(content_2[0]);
-	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 2.5 / 8.0);
+	MovePen(winwidth * 4 /20.0,winheight /10.0+winheight *2.5/8.0);
 	DrawTextString(content_3[0]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 2.0 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0 +winheight *2.0/8.0);
 	DrawTextString(content_3[1]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1.5 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0 +winheight *1.5/8.0);
 	DrawTextString(content_3[2]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1.0 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0 +winheight *1.0/8.0);
 	DrawTextString(content_3[3]);
-}
+} 
 
 void DrawHelp2()
 {
-	char *content_1[] = {"ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½ï¿½'change'ï¿½ï¿½Å¥Ñ¡ï¿½ï¿½", "ï¿½Ô¼ï¿½ï¿½Ä½ï¿½É«;ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½'select map'Ñ¡ï¿½ï¿½Ø¿ï¿½ï¿½ï¿½ï¿½Î¡ï¿½"};
-	char *content_2[] = {"ï¿½ï¿½Ï·ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ï¿½Ä±ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½Ü¹ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½Ò¡ï¿½×¢ï¿½â£¬ï¿½Ä¸ï¿½Ð¡ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½Ä£ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç³Ôµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½Ú²ï¿½ï¿½Ãºó¸´»î¡£"};
-	char *content_3[] = {"ï¿½Ë½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½"};
+	char *content_1[]={"µã»÷¿ªÊ¼°´Å¥½øÈëÓÎÏ·ºó£¬Äã¿ÉÒÔµã»÷'change'°´Å¥Ñ¡Ôñ","×Ô¼ºµÄ½ÇÉ«;µã»÷ÓÎÏ·ÓÒÉÏ·½µÄ'select map'Ñ¡Ôñ¹Ø¿¨µØÐÎ¡£"};
+	char *content_2[]={"ÓÎÏ·µÄ²Ù×÷·½·¨Îª£ºÍ¨¹ý¼üÅÌÉÏÏÂ×óÓÒ¼ü¸Ä±äÒÆ¶¯·½Ïò£¬","ÀûÓÃ×ÔÉíÌØµã¶ã±Ü¹ÖÎïÊÕ¼¯½ð±Ò¡£×¢Òâ£¬ËÄ¸öÐ¡¹ÖÊÇ²»ËÀµÄ£¬","¼´±ãÄã°ÑËüÃÇ³Ôµô£¬ËüÃÇÒ²»áÔÚ²»¾Ãºó¸´»î¡£"};
+	char *content_3[]={"ÁË½âÍêÕâÐ©»ù´¡µÄÐÅÏ¢ºó£¬ÈÃÎÒÃÇ½øÈëÕâ¸öÆæÃîµÄÊÀ½ç°É£¡"};
 	SetPointSize(20);
 	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 4 / 8.0);
 	DrawTextString(content_1[0]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 3.5 / 8.0);
+	MovePen(winwidth * 3 / 20.0,winheight / 10.0 + winheight * 3.5 / 8.0);
 	DrawTextString(content_1[1]);
-	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 3.0 / 8.0);
+	MovePen(winwidth * 4 /20.0,winheight /10.0 +winheight *3.0 /8.0);  
 	DrawTextString(content_2[0]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 2.5 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0+winheight *2.5/8.0);
 	DrawTextString(content_2[1]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 2.0 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0 +winheight *2.0/8.0);
 	DrawTextString(content_2[2]);
-	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 1.5 / 8.0);
+	MovePen(winwidth * 4 /20.0,winheight /10.0 +winheight *1.5/8.0);
 	DrawTextString(content_3[0]);
-	DrawBlinky(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_right);
-	DrawPinky(winwidth * 7 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_left);
-	DrawInky(winwidth * 13 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_right);
-	DrawClyde(winwidth * 17 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_left);
+	DrawBlinky(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_right);
+	DrawPinky(winwidth * 7 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_left);
+	DrawInky(winwidth * 13 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_right);
+	DrawClyde(winwidth * 17 / 20.0, winheight / 10.0 + winheight * 1 /19.0 , 2.0, Dir_left);
 }
 
 void DrawHelp3()
 {
-	char *content_1[] = {"ï¿½Ü¾ÃºÜ¾ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ØµÄ³Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "Ö»Öªï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¤ï¿½ï¿½ï¿½Ä±ï¿½ï¿½Ø£ï¿½È´ï¿½ï¿½Öªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç±ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½Îµï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú³Ç±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "Ê¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï£¬ï¿½ï¿½Ö»ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ã¹»ï¿½Ä½ï¿½Ò²ï¿½ï¿½Ü½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½ï¿½ì¡£"};
-	char *content_2[] = {"ï¿½ê£¡ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½"};
+	char *content_1[]={"ºÜ¾ÃºÜ¾ÃÒÔÇ°£¬ÓÐÈý¸öÓÂÊ¿À´µ½ÁËÒ»×ùÉñÃØµÄ³Ç±¤£¬ËûÃÇ","Ö»ÖªµÀ³Ç±¤ÀïÓÐÊý²»Ê¤ÊýµÄ±¦²Ø£¬È´²»ÖªµÀÕâÀïÊÇ±»×çÖäµÄµØ","·½¡£ËÄÖ»ÓÎµ´µÄÐ¡¹í»á³öÏÖÔÚ³Ç±¤µÄÖÐÑë£¬´ø×ßÄÇÐ©´óÒâµÄÓÂ","Ê¿µÄÉúÃü¡£ÔÚÕâÀï£¬ÄãÖ»ÓÐÊÕ¼¯µ½×ã¹»µÄ½ð±Ò²ÅÄÜ½â·ÅÄãµÄÁ¦","Á¿£¬´ÓÕâÀïÌÓ³öÉúÌì¡£"};
+	char *content_2[]={"Ðê£¡ËüÀ´ÁË£¡"};
 	SetPointSize(20);
 	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 4 / 8.0);
 	DrawTextString(content_1[0]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 3.5 / 8.0);
+	MovePen(winwidth * 3 / 20.0,winheight / 10.0 + winheight * 3.5 / 8.0);
 	DrawTextString(content_1[1]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 3.0 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0 +winheight *3.0 /8.0);  
 	DrawTextString(content_1[2]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 2.5 / 8.0);
-	DrawTextString(content_1[3]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 2.0 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0+winheight *2.5/8.0);
+	DrawTextString(content_1[3]); 
+	MovePen(winwidth * 3 /20.0,winheight /10.0+winheight *2.0/8.0);
 	DrawTextString(content_1[4]);
-	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 1.5 / 8.0);
+	MovePen(winwidth * 4 /20.0,winheight /10.0+winheight *1.5/8.0);
 	DrawTextString(content_2[0]);
-	DrawBlinky(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_right);
-	DrawPinky(winwidth * 7 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_left);
-	DrawInky(winwidth * 13 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_right);
-	DrawClyde(winwidth * 17 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_left);
+	DrawBlinky(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_right);
+	DrawPinky(winwidth * 7 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_left);
+	DrawInky(winwidth * 13 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_right);
+	DrawClyde(winwidth * 17 / 20.0, winheight / 10.0 + winheight * 1 /19.0 , 2.0, Dir_left);
 }
 
 void DrawHelp4()
 {
-	char *content_1[] = {"Pakuï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Í¨ï¿½Ë¡ï¿½ï¿½ï¿½Ã»", "ï¿½ï¿½Ê²Ã´ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ÒªËµï¿½ï¿½Ê²", "Ã´ï¿½Ä»ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã¡£", "ï¿½ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½Òªï¿½Ô¹ï¿½", "2/3ï¿½Ä½ï¿½Ò¾Í¿ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¡ï¿½"};
-	char *content_2[] = {"ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç³É¹ï¿½ï¿½ï¿½"};
-	DrawEater(winwidth * 3.0 / 10.0, winheight * 5.0 / 10, 2.5, Dir_right, "Purple1", 0);
+	char *content_1[]={"PakuÊÇÒ»¸öÆÕÍ¨ÈË¡£ËûÃ»","ÓÐÊ²Ã´ÌØ³¤£¬Èç¹ûÓ²ÒªËµµãÊ²","Ã´µÄ»°£¬ÄÇ¾ÍÊÇËûºÜÈÝÒ×Âú×ã¡£","Òò´Ë£¬ÔÚÓÎÏ·ÖÐÄãÖ»ÐèÒª³Ô¹»","2/3µÄ½ð±Ò¾Í¿ÉÒÔË³Àû¹ý¹ØÁË¡£"};
+	char *content_2[]={"¼ÓÓÍ£¡¹¶µ½×îºó¾ÍÊÇ³É¹¦£¡"};
+	DrawEater(winwidth * 3.0 / 10.0, winheight * 5.0 /10, 2.5, Dir_right, "Purple1", 0);
 	SetPointSize(20);
-	SetPenColor("White");
-	MovePen(winwidth / 2.0 + winwidth / 18.0, winheight / 10.0 + winheight * 4 / 8.0);
-	DrawTextString(content_1[0]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 3.5 / 8.0);
+	SetPenColor("White"); 
+	MovePen(winwidth / 2.0 +winwidth /18.0,winheight / 10.0 + winheight * 4/8.0);
+	DrawTextString(content_1[0]); 
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 3.5/8.0);
 	DrawTextString(content_1[1]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 3.0 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 3.0/8.0);
 	DrawTextString(content_1[2]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 2.5 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 2.5/8.0);
 	DrawTextString(content_1[3]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 2.0 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 2.0/8.0);
 	DrawTextString(content_1[4]);
-	MovePen(winwidth * 7.0 / 20.0, winheight / 10.0 + winheight * 1.0 / 8.0);
+	MovePen(winwidth  * 7.0 / 20.0 ,winheight / 10.0 + winheight * 1.0/8.0);
 	DrawTextString(content_2[0]);
 }
 
 void DrawHelp5()
 {
-	DrawEater(winwidth * 3.0 / 10.0, winheight * 5.0 / 10, 2.5, Dir_right, "Purple1", 1);
-	char *content_1[] = {"ï¿½ï¿½Â³Ë¹ï¿½ï¿½ï¿½É²ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½Ò£ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½", "ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¤ï¿½ï¿½Õ¨ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½", "Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ùµï¿½Ê±ï¿½ï¿½", "ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Æ¿Ëµï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¡£"};
-	char *content_2[] = {"ï¿½ï¿½Ï·ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½Ð´Ý»ï¿½Ò»ï¿½Ðµï¿½Ç±ï¿½Ü£ï¿½ï¿½ï¿½Òªï¿½Õ¼ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½Ô°ï¿½ï¿½ï¿½ï¿½Õ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½Ë¡ï¿½", "ï¿½ï¿½Ê±ï¿½ï¿½Ä§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"};
+	DrawEater(winwidth * 3.0 / 10.0, winheight * 5.0 /10, 2.5, Dir_right, "Purple1", 1);
+	char *content_1[]={"²¼Â³Ë¹°àÄÉ²©Ê¿£¬ÊÇÊÀ½çÖø","ÃûµÄÎïÀíÑ§¼Ò£¬ÔÚÒ»´ÎÒâÍâÖÐ±»","×Ô¼ºÖÆÔì³öµÄÙ¤ÂíÕ¨µ¯µÄ·ÅÉäÏß","´óÁ¿·øÉä£¬ÉíÌå²úÉúÒì±ä£¬ºóÀ´","Ã¿ËûÇéÐ÷¼¤¶¯ÐÄÌø¼ÓËÙµÄÊ±ºò£¬","¾Í»á±ä³ÉÃûÎªºÆ¿ËµÄÂÌÉ«¹ÖÎï¡£"};
+	char *content_2[]={"ÓÎÏ·ÖÐµÄÄã¾ßÓÐ´Ý»ÙÒ»ÇÐµÄÇ±ÄÜ£¬ÐèÒªÊÕ¼¯½ð±Ò»ýÔÜÄÜ","Á¿(×ó²àÄÜÁ¿Ìõ£©£¬ÄÜÁ¿ÂúÖ®ºó¿ÉÒÔ°´¡°¿Õ¸ñ¼ü¡±±äÉíÂÌ¾ÞÈË¡£","ÕâÊ±Á¬Ä§¹í¶¼»áÎªÄã²ü¶¶¡£"};
 	SetPointSize(20);
-	SetPenColor("White");
-	MovePen(winwidth / 2.0 + winwidth / 18.0, winheight / 10.0 + winheight * 5.0 / 8.0);
-	DrawTextString(content_1[0]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 4.5 / 8.0);
+	SetPenColor("White"); 
+	MovePen(winwidth / 2.0 +winwidth /18.0,winheight / 10.0 + winheight * 5.0/8.0);
+	DrawTextString(content_1[0]); 
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 4.5/8.0);
 	DrawTextString(content_1[1]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 4.0 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 4.0/8.0);
 	DrawTextString(content_1[2]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 3.5 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 3.5/8.0);
 	DrawTextString(content_1[3]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 3.0 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 3.0/8.0);
 	DrawTextString(content_1[4]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 2.5 / 8.0);
-	DrawTextString(content_1[5]);
-	MovePen(winwidth * 4.0 / 20.0, winheight / 10.0 + winheight * 1.5 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 2.5/8.0);
+	DrawTextString(content_1[5]); 
+	MovePen(winwidth * 4.0 / 20.0 ,winheight / 10.0 + winheight * 1.5/8.0);
 	DrawTextString(content_2[0]);
-	MovePen(winwidth * 3.0 / 20.0, winheight / 10.0 + winheight * 1.0 / 8.0);
+	MovePen(winwidth * 3.0 /20.0 ,winheight / 10.0 + winheight * 1.0 /8.0);
 	DrawTextString(content_2[1]);
-	MovePen(winwidth * 3.0 / 20.0, winheight / 10.0 + winheight * 0.5 / 8.0);
+	MovePen(winwidth * 3.0 /20.0 ,winheight / 10.0 + winheight * 0.5 /8.0);
 	DrawTextString(content_2[2]);
 }
 
 void DrawHelp6()
 {
-	DrawEater(winwidth * 3.0 / 10.0, winheight * 5.0 / 10, 2.5, Dir_right, "Purple1", 3);
-	char *content_1[] = {"ï¿½ï¿½Â£ï¿½Neoï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ë¹", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É­ï¿½ï¿½Thomas A. Andersonï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Îªï¿½Ú¿ÍµÛ¹ï¿½Ä¸ï¿½ï¿½Matrixï¿½ÐµÄ¾ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½Îªï¿½Ë´Ù³ï¿½ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½", "ï¿½Äºï¿½Æ½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"};
-	char *content_2[] = {"ï¿½ï¿½Ï·ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½ï¿½ï¿½Ô°ï¿½ï¿½ï¿½ï¿½Õ¸ï¿½ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½Ç°", "ï¿½ï¿½ï¿½ï¿½ï¿½Ê®ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ä§ï¿½ï¿½Ò²ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã¡£"};
+	DrawEater(winwidth * 3.0 / 10.0, winheight * 5.0 /10, 2.5, Dir_right, "Purple1", 3);
+	char *content_1[]={"Äá°Â£¨Neo£©£¬ÕæÃûÎªÍÐÂíË¹","¡¤°²µÂÉ­£¨Thomas A. Anderson£©£¬","ÉíÎªºÚ¿ÍµÛ¹úÄ¸ÌåMatrixÖÐµÄ¾ÈÊÀ","Ö÷£¬ÎªÁË´Ù³ÉÁË»úÆ÷ÓëÈËÀàÖ®¼ä","µÄºÍÆ½½øÈëÄ¸ÌåÍê³ÉÈÎÎñ¡£"};
+	char *content_2[]={"ÓÎÏ·ÖÐµÄÄã¾ßÓÐË²¼äÒÆ¶¯µÄÁ¦Á¿£¬ÐèÒªÄãÊÕ¼¯½ð±Ò»ýÔÜÄÜ","Á¿£¨×ó²àÄÜÁ¿Ìõ£©£¬ÄÜÁ¿ÂúÖ®ºó¿ÉÒÔ°´¡°¿Õ¸ñ¼ü¡±Ë²¼äÒÆ¶¯µ½Ç°","·½×î¶àÊ®¸ñÎ»ÖÃ£¬ÕâÊ±Á¬Ä§¹íÒ²ÎÞ·¨×èÀ¹Äã¡£"};
 	SetPointSize(20);
-	SetPenColor("White");
-	MovePen(winwidth / 2.0 + winwidth / 18.0, winheight / 10.0 + winheight * 4.5 / 8.0);
-	DrawTextString(content_1[0]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 4.0 / 8.0);
+	SetPenColor("White"); 
+	MovePen(winwidth / 2.0 +winwidth /18.0,winheight / 10.0 + winheight * 4.5/8.0);
+	DrawTextString(content_1[0]); 
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 4.0/8.0);
 	DrawTextString(content_1[1]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 3.5 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 3.5/8.0);
 	DrawTextString(content_1[2]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 3.0 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 3.0/8.0);
 	DrawTextString(content_1[3]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 2.5 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 2.5/8.0);
 	DrawTextString(content_1[4]);
-	MovePen(winwidth * 4.0 / 20.0, winheight / 10.0 + winheight * 1.5 / 8.0);
+	MovePen(winwidth * 4.0 / 20.0 ,winheight / 10.0 + winheight * 1.5/8.0);
 	DrawTextString(content_2[0]);
-	MovePen(winwidth * 3.0 / 20.0, winheight / 10.0 + winheight * 1.0 / 8.0);
+	MovePen(winwidth * 3.0 /20.0 ,winheight / 10.0 + winheight * 1.0 /8.0);
 	DrawTextString(content_2[1]);
-	MovePen(winwidth * 3.0 / 20.0, winheight / 10.0 + winheight * 0.5 / 8.0);
+	MovePen(winwidth * 3.0 /20.0 ,winheight / 10.0 + winheight * 0.5 /8.0);
 	DrawTextString(content_2[2]);
 }
 
 void DrawHelp7()
 {
-	char *content_1 = {"ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê²»É¢ï¿½ï¿½ï¿½ï¿½Ò»Ö±×·ï¿½ï¿½ï¿½ã£¬ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½Òªï¿½ï¿½Ï¢"};
-	char *content_2 = {"ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½Ë£ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½×·ï¿½ï¿½"};
-	char *content_3 = {"ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¹ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶Ê±×·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½"};
-	char *content_4 = {"ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½ï¿½Ò£ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½"};
+	char *content_1={"ºìÉ«¹í»êÒõ»ê²»É¢£¬»áÒ»Ö±×·×ÙÄã£¬µ«ËüÒ²ÐèÒªÐÝÏ¢"};
+	char *content_2={"ÇàÉ«¹í»ê¹î¼Æ¶à¶Ë£¬Ê±¶øÂñ·ü£¬Ê±¶ø×·»÷"};
+	char *content_3={"³ÈÉ«¹í»êÓûÇÜ¹Ê×Ý£¬¾àÀë½ÏÔ¶Ê±×·»÷£¬¾àÀë½Ï½üÊ±·´¶øÔ¶Àë"};
+	char *content_4={"·ÛÉ«¹í»êÇå¸ß½¾°Á£¬ÈË²»½üÎÒ£¬ÎÒ²»½üÈË"};
 	SetPenColor("Purple2");
 	drawRectangle(winwidth / 10.0, winheight / 10.0 + winheight / 6.0, winwidth * 4.0 / 5, winheight / 6.0, 1);
 	drawRectangle(winwidth / 10.0, winheight / 10.0 + winheight * 2 / 6.0 + winheight / 6.0, winwidth * 4.0 / 5, winheight / 7.0, 1);
@@ -274,95 +272,95 @@ void DrawHelp7()
 
 void DrawHelp8()
 {
-	char *content_1[] = {"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Í¼ï¿½à¼­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½æ£¬ï¿½ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½'MAP", " EDITOR',ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÆµÄµï¿½Í¼ï¿½à¼­ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Ã¸ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½é£¬ï¿½ï¿½ï¿½Ç°Ñµï¿½Í¼ï¿½Ä´ï¿½ï¿½ï¿½È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò£ï¿½ï¿½Úµï¿½Í¼ï¿½à¼­ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½Ò¿ï¿½ï¿½ï¿½É«ï¿½é£¬QÇ½WÂ·Eï¿½Ô¶ï¿½ï¿½ï¿½Rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½á±£ï¿½ï¿½ï¿½ï¿½", "7ï¿½ï¿½PMMï¿½Ä¼ï¿½ï¿½Ð¡ï¿½"};
+	char *content_1[]={"ÎÒÃÇÀ´½²Ò»½²µØÍ¼±à¼­Æ÷¡£ÔÚÓÎÏ·½çÃæ£¬Äã¿ÉÒÔ¿´µ½'MAP"," EDITOR',Õâ¾ÍÊÇÎÒÃÇÉè¼ÆµÄµØÍ¼±à¼­Æ÷¡£ÎªÁËÈÃÍæ¼Ò»ñµÃ¸üºÃ","µÄÓÎÏ·ÌåÑé£¬ÎÒÃÇ°ÑµØÍ¼µÄ´´×÷È¨½»¸øÍæ¼Ò£¬ÔÚµØÍ¼±à¼­Æ÷ÉÏ","ÏÂ×óÓÒ¿ØÖÆÉ«¿é£¬QÇ½WÂ·E³Ô¶¹ÈËR¹í£¬ËùÓÐµÄÐÅÏ¢¶¼»á±£´æÔÚ","7¸öPMMÎÄ¼þÖÐ¡£"};
 	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 4 / 8.0);
-	SetPointSize(20);
+	SetPointSize(20); 
 	DrawTextString(content_1[0]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 3.5 / 8.0);
+	MovePen(winwidth * 3 / 20.0,winheight / 10.0 + winheight * 3.5 / 8.0);
 	DrawTextString(content_1[1]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 3.0 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0 +winheight *3.0 /8.0);  
 	DrawTextString(content_1[2]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 2.5 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0+winheight *2.5/8.0);
 	DrawTextString(content_1[3]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 2.0 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0 +winheight *2.0/8.0);
 	DrawTextString(content_1[4]);
-	DrawBlinky(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_right);
-	DrawPinky(winwidth * 7 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_left);
-	DrawInky(winwidth * 13 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_right);
-	DrawClyde(winwidth * 17 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_left);
+	DrawBlinky(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_right);
+	DrawPinky(winwidth * 7 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_left);
+	DrawInky(winwidth * 13 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_right);
+	DrawClyde(winwidth * 17 / 20.0, winheight / 10.0 + winheight * 1 /19.0 , 2.0, Dir_left);
 }
 
 void DrawHelp9()
 {
-	char *content_1[] = {"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Ç°Ê®ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½Ï·ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Â¼ï¿½ï¿½rank.datï¿½Ä¼ï¿½ï¿½Ð£ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ë²»Òªï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Ä¶ï¿½Ê§ï¿½ï¿½"};
+	char *content_1[]={"½ÓÏÂÀ´ÎÒÃÇ½éÉÜÅÅÐÐ°ñÏµÍ³¡£·ÖÊý×î¸ßµÄÇ°Ê®Ãû¿ÉÒÔ½øÈë","ÅÅÐÐ°ñ¡£Íæ¼ÒµÄÓÎÏ·ÐÅÏ¢»á¼ÇÂ¼ÔÚrank.datÎÄ¼þÖÐ£¬Ò»°ãÇé¿öÏÂ","Çë²»ÒªÐÞ¸ÄÕâ¸öÎÄ¼þ£¬ÒÔ±ÜÃâÔì³ÉÐÅÏ¢µÄ¶ªÊ§¡£"};
 	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 4 / 8.0);
-	SetPointSize(20);
+	SetPointSize(20); 
 	DrawTextString(content_1[0]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 3.5 / 8.0);
+	MovePen(winwidth * 3 / 20.0,winheight / 10.0 + winheight * 3.5 / 8.0);
 	DrawTextString(content_1[1]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 3.0 / 8.0);
+	MovePen(winwidth * 3 /20.0,winheight /10.0 +winheight *3.0 /8.0);  
 	DrawTextString(content_1[2]);
-	DrawBlinky(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_right);
-	DrawPinky(winwidth * 7 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_left);
-	DrawInky(winwidth * 13 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_right);
-	DrawClyde(winwidth * 17 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_left);
+	DrawBlinky(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_right);
+	DrawPinky(winwidth * 7 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_left);
+	DrawInky(winwidth * 13 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_right);
+	DrawClyde(winwidth * 17 / 20.0, winheight / 10.0 + winheight * 1 /19.0 , 2.0, Dir_left);
 }
 
 void DrawHelp10()
 {
-	char *content_1[] = {"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ò£¬²ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ý¼ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½é£¬ï¿½Ù¿ï¿½Ò»ï¿½ÖµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"};
+	char *content_1[]={"ÓÉÓÚÓÎÏ·ÌåÁ¿µÄÔ­Òò£¬²¿·ÖÄÚ´æÊý¾Ý¼ÓÔØ¹ýºóÎÞ·¨Çå¿Õ","ÍêÈ«£¬Èç¹ûÏëÒª¸üºÃµÄÓÎÏ·ÌåÑé£¬ÔÙ¿ªÒ»¾ÖµÄ»°½¨ÒéÖØÐÂÆô¶¯¡£"};
 	MovePen(winwidth * 4 / 20.0, winheight / 10.0 + winheight * 4 / 8.0);
-	SetPointSize(20);
-	DrawTextString(content_1[0]);
-	MovePen(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 3.5 / 8.0);
-	DrawTextString(content_1[1]);
-	DrawBlinky(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_right);
-	DrawPinky(winwidth * 7 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_left);
-	DrawInky(winwidth * 13 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_right);
-	DrawClyde(winwidth * 17 / 20.0, winheight / 10.0 + winheight * 1 / 19.0, 2.0, Dir_left);
+		SetPointSize(20); 
+		DrawTextString(content_1[0]);
+		MovePen(winwidth * 3 / 20.0,winheight / 10.0 + winheight * 3.5 / 8.0);
+		DrawTextString(content_1[1]);
+		DrawBlinky(winwidth * 3 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_right);
+		DrawPinky(winwidth * 7 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_left);
+		DrawInky(winwidth * 13 / 20.0, winheight / 10.0 + winheight * 1 / 19.0 , 2.0, Dir_right);
+		DrawClyde(winwidth * 17 / 20.0, winheight / 10.0 + winheight * 1 /19.0 , 2.0, Dir_left);
 }
 
 void DrawHelp11()
 {
-	char *content_1[] = {"ï¿½ï¿½Ð»ï¿½ï¿½Ò»Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¡£ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Î¿ï¿½òµ¥£ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¸ï¿½ï¿½ÃµÄ½ï¿½ï¿½é£¬Ò²ï¿½ï¿½Ó­ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¡ï¿½"};
-	MovePen(winwidth * 3.0 / 20.0, winheight * 6.0 / 10.0);
+	char *content_1[]={"¸ÐÐ»ÄãÒ»Ö±¶Áµ½ÁËÕâÀï¡£ÎÒ","ÃÇÕæÐÄµØÏ£ÍûÄãÄÜÏ²»¶ÎÒÃÇ×öµÄ","ÓÎÏ·¡£µ«ÊÇÓÉÓÚÍ¼ÐÎ¿â¼òµ¥£¬×÷","ÕßÄÜÁ¦ÓÐÏÞ£¬ÄÑÃâ»áÓÐ´íÎó³öÏÖ¡£","Èç¹ûÄãÓÐ¸üºÃµÄ½¨Òé£¬Ò²»¶Ó­ÔÚ","»¥ÆÀ½áÊøºóÕÒÎÒÃÇÌÖÂÛ¡£"};
+	MovePen(winwidth * 3.0 /20.0,winheight * 6.0 /10.0 );
 	StartFilledRegion(1);
 	DrawHeart();
 	EndFilledRegion();
 	SetPointSize(20);
-	SetPenColor("White");
-	MovePen(winwidth / 2.0 + winwidth / 18.0, winheight / 10.0 + winheight * 4.5 / 8.0);
-	DrawTextString(content_1[0]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 4.0 / 8.0);
+	SetPenColor("White"); 
+	MovePen(winwidth / 2.0 +winwidth /18.0,winheight / 10.0 + winheight * 4.5/8.0);
+	DrawTextString(content_1[0]); 
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 4.0/8.0);
 	DrawTextString(content_1[1]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 3.5 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 3.5/8.0);
 	DrawTextString(content_1[2]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 3.0 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 3.0/8.0);
 	DrawTextString(content_1[3]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 2.5 / 8.0);
+	MovePen(winwidth / 2.0 ,winheight / 10.0 + winheight * 2.5/8.0);
 	DrawTextString(content_1[4]);
-	MovePen(winwidth / 2.0, winheight / 10.0 + winheight * 2.0 / 8.0);
+	MovePen(winwidth  / 2.0 ,winheight / 10.0 + winheight * 2.0/8.0);
 	DrawTextString(content_1[5]);
-	MovePen(winwidth * 7.0 / 20.0, winheight / 10.0 + winheight * 1.0 / 8.0);
-	DrawTextString("ï¿½Ù´Î¸ï¿½Ð»ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½");
+	MovePen(winwidth * 7.0 / 20.0,winheight / 10.0 + winheight * 1.0/8.0);
+	DrawTextString("ÔÙ´Î¸ÐÐ»ÄãµÄÔÄ¶Á¡£"); 
 	setButtonColors("S_pink", "S_blue", "S_pink", "S_blue", 1);
-	if (button((14), winwidth * 14 / 20.0, winheight * 2.8 / 20.0, winwidth * 3 / 20.0, winwidth / 18.0, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·"))
-	{
-		sum = 0;
-		Length = Inivation("S");
-		launchselecter = MENU_GAME;
-	}
+	if (button((14), winwidth * 14 / 20.0, winheight * 2.8 / 20.0, winwidth * 3 / 20.0, winwidth / 18.0, "½øÈëÓÎÏ·"))
+			{
+				sum = 0;
+				Length = Inivation("S");
+				launchselecter = MENU_GAME;
+			}
 }
 
 void DrawHeart()
 {
 	SetPointSize(20);
 	SetPenColor("ZJUred");
-	MovePen(winwidth * 3 / 20.0, winheight * 6.0 / 10.0);
-	DrawLine(winwidth * 1.50 / 20.0, winheight * 1.0 / 10.0);
-	DrawLine(winwidth * 1.5 / 20.0, -winheight * 1.0 / 10.0);
-	DrawLine(winwidth * 1.5 / 20.0, winheight * 1.0 / 10.0);
-	DrawLine(winwidth * 1.5 / 20.0, -winheight * 1.0 / 10.0);
-	DrawLine(-winwidth * 3.0 / 20.0, -winheight * 2.0 / 10.0);
-	DrawLine(-winwidth * 3.0 / 20.0, winheight * 2.0 / 10.0);
+	MovePen(winwidth * 3 /20.0,winheight * 6.0 /10.0 );
+	DrawLine(winwidth * 1.50 / 20.0 ,winheight * 1.0 /10.0);
+	DrawLine(winwidth * 1.5 /20.0 ,-winheight * 1.0 / 10.0);
+	DrawLine(winwidth * 1.5 / 20.0 ,winheight * 1.0 /10.0);
+	DrawLine(winwidth * 1.5 /20.0 ,-winheight * 1.0 / 10.0);
+	DrawLine(-winwidth * 3.0 / 20.0 ,-winheight * 2.0 /10.0);
+	DrawLine(-winwidth *3.0 /20.0 ,winheight * 2.0 /10.0);
 }

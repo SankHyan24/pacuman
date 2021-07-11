@@ -1,4 +1,3 @@
-// By scitbb
 #include "pmrun.h"
 #include "pmgame.h"
 #include "pmrank.h"
@@ -13,21 +12,21 @@
         int plyx = GmSts.player->y; \
         GmSts.ifmv = 0;             \
         a                           \
-    } while (GmSts.ifmv && cnt < 10); //*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    } while (GmSts.ifmv && cnt < 10); //*µü´ú¹ý³Ì
 #define RANKAD       \
     ifrankadded = 0; \
     GetRank();       \
     ifrankadded = 0; \
     AddRank();       \
     ifrankwrtd = 0;  \
-    WriteRank(); //*ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½ÓµÄ±ï¿½×¼ï¿½ï¿½Ê½
+    WriteRank(); //*ÅÅÐÐ°ñÌí¼ÓµÄ±ê×¼¸ñÊ½
 bool timlopflag = 0;
 bool timghstflag = 0;
 bool newbeeflag = 0;
 int runmvctrl;
 int alittlegg = 0;
 
-void DeletPea() // É¾ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ÃµÄ¶ï¿½ï¿½ï¿½
+void DeletPea() // É¾³ý³Ô¶¹ÈËËùÔÚÎ»ÖÃµÄ¶¹×Ó
 {
     int plyx = GmSts.player->x, plyy = GmSts.player->y;
     int lens = GmSts.Lens;
@@ -48,7 +47,7 @@ void DeletPea() // É¾ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ÃµÄ¶ï¿½ï¿½ï¿½
     }
 }
 
-bool runifkey(int key, int event) // ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Ç¶ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
+bool runifkey(int key, int event) // ÅÐ¶ÏÊÇ·ñÊÇ¶ÔÓ¦²Ù×÷µÄ¼üÅÌ
 {
     if (launchselecter == MENU_GMAP && event == KEY_DOWN)
     {
@@ -292,7 +291,7 @@ static void ChangeGhstDir(Dir *dir)
         *dir = Dir_down;
 }
 
-void AiChase(int gstid) // ×·ï¿½ï¿½
+void AiChase(int gstid) // ×·Öð
 {
     ID *fromposi = GmSts.ghst[gstid];
     ID *nextposi = SpFstStp(GmSts.ghst[gstid], GmSts.player);
@@ -301,7 +300,7 @@ void AiChase(int gstid) // ×·ï¿½ï¿½
     ChangeGhstDir(&GmSts.ghstd[gstid]);
 }
 
-void AiWonder(int gstid) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+void AiWonder(int gstid) // Ëæ»úÁï´ï
 {
     int randm, posi;
     int plyy = GmSts.ghst[gstid]->x;
@@ -380,13 +379,13 @@ void AiWonder(int gstid) // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     GmSts.ghstd[gstid] = randm;
 }
 
-void AiAmbush(int gstid) // ï¿½ï¿½ï¿½
+void AiAmbush(int gstid) // Âñ·ü
 {
     ID *a = GmSts.ghst[gstid], *b = GmSts.player;
     Juli(a, b) < 8 ? AiChase(gstid) : AiWonder(gstid);
 }
 
-void AiPreTen(int gstid) // ï¿½ï¿½×°×¥ï¿½ï¿½
+void AiPreTen(int gstid) // ¼Ù×°×¥ÈË
 {
     ID *a = GmSts.ghst[gstid], *b = GmSts.player;
     Juli(a, b) > 8 ? AiChase(gstid) : AiWonder(gstid);
@@ -426,10 +425,10 @@ void MoveGst(int gstid, int mode)
     }
 }
 
-void Lost_Win() // ï¿½Ð¶ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
+void Lost_Win() // ÅÐ¶ÏÊ¤Àû»òÕßÊ§°Ü£¬²¢½øÐÐÏàÓ¦²Ù×÷
 {
     int i;
-    if (GmSts.score == GmSts.scoregoal) // Ê¤ï¿½ï¿½
+    if (GmSts.score == GmSts.scoregoal) // Ê¤Àû
     {
         RANKAD
         free(GmSts.map);
@@ -443,7 +442,7 @@ void Lost_Win() // ï¿½Ð¶ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
         for (i = 0; i < 4; i++)
         {
             if (GmSts.ifghst[i])
-                if (Juli(GmSts.ghst[i], GmSts.player) == 1) // ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                if (Juli(GmSts.ghst[i], GmSts.player) == 1) // ¶Ô×²Çé¿öËÀÍöÌØÅÐ
                 {
                     bool flag = 1;
                     if (GmSts.ghstd[i] == Dir_down && GmSts.plyrd == Dir_up)
@@ -472,7 +471,7 @@ void Lost_Win() // ï¿½Ð¶ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿
         for (i = 0; i < 4; i++)
         {
             if (GmSts.ifghst[i])
-                if (Juli(GmSts.ghst[i], GmSts.player) == 2) // ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                if (Juli(GmSts.ghst[i], GmSts.player) == 2) // ¶Ô×²Çé¿öËÀÍöÌØÅÐ
                 {
                     bool flag = 0;
                     if (GmSts.ghstd[i] == Dir_down && GmSts.plyrd == Dir_up)

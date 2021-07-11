@@ -1,4 +1,3 @@
-// By scitbb
 #ifndef _PMERR_H_
 #define _PMERR_H_
 

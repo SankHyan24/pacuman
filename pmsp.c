@@ -1,4 +1,3 @@
-// By scitbb
 #include "pmsp.h"
 #include <stdlib.h>
 //
@@ -6,21 +5,21 @@
 #define CONFIRMFREE(a) \
     if (a != NULL)     \
         free(a);
-ID *verhead = NULL;      //ï¿½ï¿½ï¿½Í·
-int noofver = 0;         //ï¿½ï¿½ï¿½ï¿½
-struct SpEdge *edgehead; //ï¿½ß±ï¿½Í·
-IDnode *spheap;          //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-int noofedge = 0;        //ï¿½ï¿½ï¿½ï¿½
-int *sppath;             //Ç°ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-int *spdis;              //ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-//ï¿½ï¿½ï¿½ï¿½ï¿½Ç¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ID *verhead = NULL;      //µã±íÍ·
+int noofver = 0;         //µãÊý
+struct SpEdge *edgehead; //±ß±íÍ·
+IDnode *spheap;          //¶ÑÊý×é
+int noofedge = 0;        //±ßÊý
+int *sppath;             //Ç°ÖÃ¶¥µãÊý×é
+int *spdis;              //×î¶Ì¾àÀëÊý×é
+//ÏÂÃæÊÇ¼¸¸ö³õÊ¼»¯¸¨Öú±äÁ¿
 static bool ifvertexget = 0;
 static bool ifedgeget = 0;
 static bool ifgraphget = 0;
 static bool ifdjskrainit = 0;
 //
-static int n = 0;     // ï¿½ï¿½ï¿½ï¿½Ôªï¿½Ø¸ï¿½ï¿½ï¿½
-static bool *sphadhp; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+static int n = 0;     // ¶ÑÖÐÔªËØ¸öÊý
+static bool *sphadhp; //¶ÑÅÅÐò£¬ÊÇ·ñ½ø¹ý¶Ñ
 //
 //
 bool Spifpath(int Vertype)
@@ -76,7 +75,7 @@ void SpGetVertex()
                 noofver++;
     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½
     verhead = (ID *)calloc(noofver, sizeof(ID));
-    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿?
     ID *workp = verhead;
     for (i = 0; i < Length; i++)
         for (j = 0; j < Length; j++)
@@ -86,7 +85,7 @@ void SpGetVertex()
                 (workp + vernumber)->y = j;
                 vernumber++;
             }
-    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿?
     // for (i = 0; i < noofver; i++)
     // {
     //     printf("No.%2d: (%2d, %2d)\n", i, (workp + i)->x, (workp + i)->y);
@@ -96,7 +95,7 @@ void SpGetVertex()
 void SpGetEdge()
 {
     noofedge = Maxdge;
-    // printf(" Number of  Edge Ô¶ï¿½ï¿½ï¿½ï¿½%d", noofedge);
+    // printf(" Number of  Edge Ô¶À´µÄ%d", noofedge);
     edgehead = (struct SpEdge *)calloc(noofver * 4, sizeof(struct SpEdge));
     struct SpEdge *workp = edgehead;
     int cnti, cntj, cntm = 0, edgenumber = 0;
@@ -174,7 +173,7 @@ void SpGetEdge()
                 }
             }
     noofedge = edgenumber;
-    // printf(" Number of  Edge ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%d", noofedge);
+    // printf(" Number of  Edge ºóÀ´µÄ%d", noofedge);
 
     // for (cnti = 0; cnti < edgenumber; cnti++)
     // printf("No.%2d: (%2d, %2d) -> (%2d, %2d)\n", cnti, (workp + cnti)->fr->x, (workp + cnti)->fr->y, (workp + cnti)->to->x, (workp + cnti)->to->y);

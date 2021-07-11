@@ -1,4 +1,3 @@
-// By scitbb
 #ifndef ___PM_HELP_H
 #define ___PM_HELP_H
 
