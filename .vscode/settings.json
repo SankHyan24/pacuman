@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "math.h": "c",
+        "corecrt_math_defines.h": "c",
+        "time.h": "c",
+        "global.h": "c",
+        "graphics.h": "c",
+        "*.rh": "c",
+        "extgraph.h": "c",
+        "pmrank.h": "c",
+        "pmrun.h": "c",
+        "pmhelp.h": "c",
+        "pmsp.h": "c",
+        "algorithm": "c",
+        "xmemory": "c",
+        "pmeditor.h": "c"
+    }
+}
