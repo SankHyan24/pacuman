@@ -1,3 +1,4 @@
+// By scitbb
 #ifndef _PMRANK_H_
 #define _PMRANK_H_
 
@@ -17,7 +18,7 @@ typedef struct
     int level;
     int score;
     char cinfo[40];
-} rkinfo; //*ÅÅÐÐ°ñÐÅÏ¢
+} rkinfo; //*ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½Ï¢
 /*
  * Global Variable:
  * rkinfo head: the header of the rank table linklist
@@ -26,11 +27,11 @@ typedef struct
  * int ifrankadded: if the new player's rank information is added
  * int ifrankwrtd: if the rank information file is updated 
  */
-extern rkinfo head;      //ÐÅÏ¢Í·
-extern int ifrankexit;   //ÊÇ·ñÅÅÐÐ°ñ´æÔÚ
-extern int ifrankgotten; //ÊÇ·ñÒÑ¾­µÃµ½Êý¾Ý
-extern int ifrankadded;  //ÊÇ·ñÒÑ¾­ÔöÌíÊý¾Ý
-extern int ifrankwrtd;   //ÊÇ·ñÒÑ¾­Ð´ÈëÊý¾Ý
+extern rkinfo head;      //ï¿½ï¿½Ï¢Í·
+extern int ifrankexit;   //ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ï¿½ï¿½ï¿½
+extern int ifrankgotten; //ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½
+extern int ifrankadded;  //ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+extern int ifrankwrtd;   //ï¿½Ç·ï¿½ï¿½Ñ¾ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 /*
  * Function: GetRank()
  * Get the information in the rank file.

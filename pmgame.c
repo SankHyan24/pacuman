@@ -1,4 +1,5 @@
 // Demon Version
+// By scitbb
 #include "pmgame.h"
 #include "pmrank.h"
 #include "pmminit.h"
@@ -19,11 +20,11 @@ int energy = 0;
 ID *ghststart;
 int ghstrenewcnt[4];
 
-void gmstinit() //µØÍ¼¼ÓÔØ³õÊ¼»¯
+void gmstinit() //ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ø³ï¿½Ê¼ï¿½ï¿½
 {
 	if (GmSts.map != NULL)
 		free(GmSts.map);
-	printf("µØÍ¼¼ÓÔØ³õÊ¼»¯\n");
+	printf("ï¿½ï¿½Í¼ï¿½ï¿½ï¿½Ø³ï¿½Ê¼ï¿½ï¿½\n");
 	if (GmSts.lvl == 0)
 		GmSts.lvl = 1;
 	GmSts.plyrd = Dir_down;
@@ -51,10 +52,10 @@ void gmstinit() //µØÍ¼¼ÓÔØ³õÊ¼»¯
 		for (i = 0; i < 4; i++)
 			GmSts.ghst[i] = (verhead + noofver - 1);
 	ghststart = GmSts.ghst[0];
-	//Ìí¼Ó¶¹×Ó
+	//ï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ï¿½
 	SpShortPath(GmSts.player);
 	for (i = 0; i < noofver; i++)
-		if (spdis[i] != MAXDIST) // ÄÜµ½´ïµÄËùÓÐÎ»ÖÃ¶¼¼ÓÉÏ¶¹×Ó
+		if (spdis[i] != MAXDIST) // ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ï¿½ï¿½
 		{
 			*(workp + (verhead + i)->x * Length + (verhead + i)->y) = Mp_pea;
 		}
@@ -152,7 +153,7 @@ static void drawmvghst(double cx, double cy, double size, int type, double dx, d
 
 void loadsrc()
 {
-	// ±³¾°
+	// ï¿½ï¿½ï¿½ï¿½
 	double startx = winwidth / 12, starty = winheight / 12;
 	double dx = winwidth * 10 / (12 * Length), dy = winheight * 10 / (12 * Length);
 	SetPenColor("GREEN");
@@ -173,14 +174,14 @@ void loadsrc()
 		}
 	//
 	double tmstep;
-	//³Ô¶¹ÈË
+	//ï¿½Ô¶ï¿½ï¿½ï¿½
 	int eaterx, eatery;
 	eatery = GmSts.player->x;
 	eaterx = GmSts.player->y;
 	tmstep = (durstepply * 3.2) / (GmSts.plyvelo * 1.0);
 	tmpsts = tmstep;
 	DrawEater(startx + eaterx * dx + dx / 2, starty + eatery * dy + dy / 2, ridofcoin * 2 / 5, GmSts.plyrd, "Black", GmSts.skin);
-	//¹í
+	//ï¿½ï¿½
 	int ghstno = 0, ghstx, ghsty;
 	for (ghstno = 0; ghstno < 4; ghstno++)
 	{
@@ -200,14 +201,14 @@ void loadsrc()
 	drawGstBar();
 }
 
-void drawscore() // »æÖÆ»ý·ÖÆ÷
+void drawscore() // ï¿½ï¿½ï¿½Æ»ï¿½ï¿½ï¿½ï¿½ï¿½
 {
 	char scorestring[10];
 	sprintf(scorestring, "Score: %d/%d", GmSts.score, GmSts.scoregoal);
 	SetPointSize(30);
 	SetPenColor("Black");
 	drawBox(winwidth * 9 / 12, winheight - 1.5, winwidth * 1 / 5, GetFontHeight() * 1.5, 0, "", 's', "Black");
-	SetPenColor("Forscore"); //¼Ç·ÖÆ÷
+	SetPenColor("Forscore"); //ï¿½Ç·ï¿½ï¿½ï¿½
 	drawBox(winwidth * 9 / 12, winheight - 1.5, winwidth * 1 / 5, GetFontHeight() * 1.5, 1, scorestring, 's', "Black");
 }
 
@@ -304,16 +305,16 @@ static void drawGstBar()
 	DrawEater(winwidth * 23 / 24, yystart + dyy * GmSts.score, winwidth / 48, Dir_up, "Purple2", GmSts.skin);
 }
 
-void drawlvl(double x, double y, double w, double h) // »æÖÆµÈ¼¶À¸
+void drawlvl(double x, double y, double w, double h) // ï¿½ï¿½ï¿½ÆµÈ¼ï¿½ï¿½ï¿½
 {
 	SetPointSize(30);
 	char scorestring[10];
 	sprintf(scorestring, "Your Level: %d", GmSts.lvl);
-	SetPenColor("Forscore"); //¼Ç·ÖÆ÷
+	SetPenColor("Forscore"); //ï¿½Ç·ï¿½ï¿½ï¿½
 	drawBox(x, y, w, GetFontHeight() * 1.5, 1, scorestring, 's', "Black");
 }
 
-void dmapname() // »æÖÆµØÍ¼Ãû³ÆÀ¸
+void dmapname() // ï¿½ï¿½ï¿½Æµï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
 	char namer[40], *wkp;
 	wkp = namer;
@@ -351,7 +352,7 @@ void dmapname() // »æÖÆµØÍ¼Ãû³ÆÀ¸
 	SetPointSize(13);
 }
 
-void disppacman() // ÓÎÏ·½øÐÐµÄÖ÷º¯Êý
+void disppacman() // ï¿½ï¿½Ï·ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
 	if (formerposition[0] == NULL || timghstflag)
 	{
@@ -361,10 +362,10 @@ void disppacman() // ÓÎÏ·½øÐÐµÄÖ÷º¯Êý
 			formerposition[i] = GmSts.ghst[i];
 		}
 	}
-	if (!ifpause) // ÔÝÍ£µÄ»°Ìø¹ýÒÆ¶¯²¿·Ö
+	if (!ifpause) // ï¿½ï¿½Í£ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
-		Changedir(); // ¸ü¸Ä³Ô¶¹ÈËµÄ·½Ïò
-		MoveMan();	 //¸ü¸Ä³Ô¶¹ÈËÎ»ÖÃ
+		Changedir(); // ï¿½ï¿½ï¿½Ä³Ô¶ï¿½ï¿½ËµÄ·ï¿½ï¿½ï¿½
+		MoveMan();	 //ï¿½ï¿½ï¿½Ä³Ô¶ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 		int i;
 		if (timghstflag)
 		{
@@ -387,8 +388,8 @@ void disppacman() // ÓÎÏ·½øÐÐµÄÖ÷º¯Êý
 			}
 			timghstflag = 0;
 		}
-		Lost_Win(); // ÅÐ¶ÏÊÇ·ñÊ¤Àû»òËÀÍö
+		Lost_Win(); // ï¿½Ð¶ï¿½ï¿½Ç·ï¿½Ê¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
-	loadsrc(); // ¼ÓÔØµØÍ¼ÔªËØ
-	drawmap(); // »æÖÆµØÍ¼
+	loadsrc(); // ï¿½ï¿½ï¿½Øµï¿½Í¼Ôªï¿½ï¿½
+	drawmap(); // ï¿½ï¿½ï¿½Æµï¿½Í¼
 }

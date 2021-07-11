@@ -1,4 +1,5 @@
 // Demon Version
+// By scitbb
 /*
  * File: pmanima.h
  * PacMan_ANIMAtion
@@ -114,6 +115,6 @@ void DrawBlinkyStar();
  * You Must make sure the Value of the "launchselecter" is "MENU_ANIM".
  */
 void DrawAnima();
-void DrawGamePreview(); // »æÖÆgameµÄui½çÃæ
-void DrawEditName();    //»æÖÆÖ÷²Ëµ¥µÄÐÕÃûÊäÈë¿ò
+void DrawGamePreview(); // ï¿½ï¿½ï¿½ï¿½gameï¿½ï¿½uiï¿½ï¿½ï¿½ï¿½
+void DrawEditName();    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #endif

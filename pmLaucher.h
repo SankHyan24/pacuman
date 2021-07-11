@@ -1,7 +1,8 @@
+// By scitbb
 #ifndef _PMLAUCHER_H_
 #define _PMLAUCHER_H_
 /*
-*游戏的主界面文件。为游戏提供主体框架，故不进行函数声明。
+*锟斤拷戏锟斤拷锟斤拷锟斤拷锟斤拷锟侥硷拷锟斤拷为锟斤拷戏锟结供锟斤拷锟斤拷锟杰ｏ拷锟绞诧拷锟斤拷锟叫猴拷锟斤拷锟斤拷锟斤拷锟斤拷
 */
 void drawtest();
 void drawpmMenu();

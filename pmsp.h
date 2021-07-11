@@ -1,11 +1,12 @@
 // Demon Version
+// By scitbb
 /*
  * File: pmsp.h
  * PacMan_ShortPath
  * Version: 1.0  for Pac-Man
  * ------------------------------------------------------
  * AI Controller
- * »ùÓÚµÏ½ÜË¹ÌØÀ­Ëã·¨µÄaiÉè¼Æ
+ * ï¿½ï¿½ï¿½ÚµÏ½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½ã·¨ï¿½ï¿½aiï¿½ï¿½ï¿½
  */
 #ifndef _PMSP_H_
 #define _PMSP_H_
@@ -15,29 +16,29 @@
 #include "pmrun.h"
 #include "pmerr.h"
 #include "pmdirrt.h"
-// ´ËÎªÄ¬ÈÏµÄ×î¶ÌÂ·¾¶×î´óÖµ
+// ï¿½ï¿½ÎªÄ¬ï¿½Ïµï¿½ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 #define MAXDIST 0xfffff
 
 struct SpEdge
 {
     ID *fr, *to;
     int dist;
-}; //±ßÐÅÏ¢
+}; //ï¿½ï¿½ï¿½ï¿½Ï¢
 typedef struct
 {
     ID *node;
     int data;
-} IDnode; //¶Ñ½á¹¹Ìå
+} IDnode; //ï¿½Ñ½á¹¹ï¿½ï¿½
 //
-extern ID *verhead;             //µã±íÍ·Ö¸Õë
-extern int noofver;             //µãµÄÊýÁ¿
-extern struct SpEdge *edgehead; //±ß±íÍ·Ö¸Õë
-extern int noofedge;            //±ßµÄÊýÁ¿
-extern IDnode *spheap;          //¶ÑµÄÍ·Ö¸Õë
-extern int *spdis;              //Ä¿Ç°µÄ×î¶Ì¾àÀë
-extern int *sppath;             //Â·¾¶Êý×é
+extern ID *verhead;             //ï¿½ï¿½ï¿½Í·Ö¸ï¿½ï¿½
+extern int noofver;             //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+extern struct SpEdge *edgehead; //ï¿½ß±ï¿½Í·Ö¸ï¿½ï¿½
+extern int noofedge;            //ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½
+extern IDnode *spheap;          //ï¿½Ñµï¿½Í·Ö¸ï¿½ï¿½
+extern int *spdis;              //Ä¿Ç°ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½
+extern int *sppath;             //Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 //
-extern bool ifspexe; //²âÊÔÓÃ£¬ÊÇ·ñµÏ½ÜË¹ÌØÀ­Ö´ÐÐ
+extern bool ifspexe; //ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½Ç·ï¿½Ï½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½
 //
 /*
  * Function: Spifpath
@@ -50,51 +51,51 @@ bool Spifpath(int Vertex);
  * Add the map Vertex into memory
  * ------------------------------------------------------
  */
-ID *SpLocateVer(int, int);   //µã±íÑ°Ö·
-int SpContVer(int, int);     //µã±íÑ°ºÅ
-void SpCopyID(ID *a, ID *b); //µã¸³Öµ
-void SpGetVertex();          //¹¹½¨µã±í
+ID *SpLocateVer(int, int);   //ï¿½ï¿½ï¿½Ñ°Ö·
+int SpContVer(int, int);     //ï¿½ï¿½ï¿½Ñ°ï¿½ï¿½
+void SpCopyID(ID *a, ID *b); //ï¿½ã¸³Öµ
+void SpGetVertex();          //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 /*
  * Function: SpGetEdge
  * Add the map Edge into memory
  * ------------------------------------------------------
  */
-void SpGetEdge();    //¹¹½¨±ß±í
-void SpInitDjskra(); //µÏ½ÜË¹ÌØÀ­³õÊ¼»¯
+void SpGetEdge();    //ï¿½ï¿½ï¿½ï¿½ï¿½ß±ï¿½
+void SpInitDjskra(); //ï¿½Ï½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½
 /*
  * Function: SpCreateGraph
  * Judge if the position is a path
  * ------------------------------------------------------
  */
-void SpCreateGraph();           //¹¹½¨¡°Í¼¡±
-void SpShortPath(ID *StartVer); //µÏ½ÜË¹ÌØÀ­µ÷ÓÃ¡£ÐèÒªÊäÈëÆðÊ¼Î»ÖÃ
+void SpCreateGraph();           //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½
+void SpShortPath(ID *StartVer); //ï¿½Ï½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¡ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼Î»ï¿½ï¿½
 /*
- * º¯Êý SpReinit
- * ¶Ô Short Path ÖÐµÄ±äÁ¿º¯Êý¿âÖØÐÂ½øÐÐ³õÊ¼»¯
- * ÓÃÓÚµØÍ¼Ë¢ÐÂÖ®ºó
+ * ï¿½ï¿½ï¿½ï¿½ SpReinit
+ * ï¿½ï¿½ Short Path ï¿½ÐµÄ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½Ð³ï¿½Ê¼ï¿½ï¿½
+ * ï¿½ï¿½ï¿½Úµï¿½Í¼Ë¢ï¿½ï¿½Ö®ï¿½ï¿½
  */
-void SpReinit(); //Í¼ÖØ¹¹
+void SpReinit(); //Í¼ï¿½Ø¹ï¿½
 /*
- * º¯Êý SpDjReinit
- * ¶Ô Short Path ÖÐµÄ Djsktra Ïà¹ØµÄ±äÁ¿º¯Êý¿âÖØÐÂ½øÐÐ³õÊ¼»¯
- * ÓÃÓÚÆðµãÎ»ÖÃË¢ÐÂÖ®ºó
+ * ï¿½ï¿½ï¿½ï¿½ SpDjReinit
+ * ï¿½ï¿½ Short Path ï¿½Ðµï¿½ Djsktra ï¿½ï¿½ØµÄ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½Ð³ï¿½Ê¼ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Ë¢ï¿½ï¿½Ö®ï¿½ï¿½
  */
-void SpDjReinit(); //µÏ½ÜË¹ÌØÀ­Êý¾ÝÖØ¹¹
+void SpDjReinit(); //ï¿½Ï½ï¿½Ë¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¹ï¿½
 //Application
 /*
- * º¯Êý SpFstStp
+ * ï¿½ï¿½ï¿½ï¿½ SpFstStp
  * Short Path First Step Direction
- * FROMÎªÆðµãµÄÎ»ÖÃÖ¸Õë£¬TOÎªÄ¿±êµãµÄÎ»ÖÃÖ¸Õë
- * ·µ»ØÖµÎª´ËÂ·¾¶×ßµÚÒ»²½µÄ·½Ïò
+ * FROMÎªï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Ö¸ï¿½ë£¬TOÎªÄ¿ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½Ö¸ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ÖµÎªï¿½ï¿½Â·ï¿½ï¿½ï¿½ßµï¿½Ò»ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
  */
-ID *SpFstStp(ID *FROM, ID *TO); //×î¶ÌÂ·¾¶
-ID *SpAntiFS(ID *FROM, ID *TO); //×î¶ÌÂ·¾¶µÄÏà·´·½Ïò
-// ¶Ñº¯Êý£¨Ò»¸öÐ¡¸ù¶Ñ£©
+ID *SpFstStp(ID *FROM, ID *TO); //ï¿½ï¿½ï¿½Â·ï¿½ï¿½
+ID *SpAntiFS(ID *FROM, ID *TO); //ï¿½ï¿½ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½à·´ï¿½ï¿½ï¿½ï¿½
+// ï¿½Ñºï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½Ñ£ï¿½
 // The Heap
-void swap(IDnode *a, IDnode *b); //¶ÑÄÚÔªËØ½»»»
-void up(int p);                  //¶ÑÉÏ¸¡
-void push(IDnode x);             //Èë¶Ñ
-void down(int p);                //down²Ù×÷
-void pop();                      //³ö¶Ñ
+void swap(IDnode *a, IDnode *b); //ï¿½ï¿½ï¿½ï¿½Ôªï¿½Ø½ï¿½ï¿½ï¿½
+void up(int p);                  //ï¿½ï¿½ï¿½Ï¸ï¿½
+void push(IDnode x);             //ï¿½ï¿½ï¿½
+void down(int p);                //downï¿½ï¿½ï¿½ï¿½
+void pop();                      //ï¿½ï¿½ï¿½ï¿½
 
 #endif

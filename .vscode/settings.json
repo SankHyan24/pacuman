@@ -13,6 +13,7 @@
         "pmsp.h": "c",
         "algorithm": "c",
         "xmemory": "c",
-        "pmeditor.h": "c"
+        "pmeditor.h": "c",
+        "string.h": "c"
     }
 }
