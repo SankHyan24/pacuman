@@ -19,4 +19,4 @@ WINDOWS下, C语言编写. 基于libgraphics和浙江大学simplegui写出的新
 ### [report](https://github.com/SankHyan24/pacuman/tree/master/report): 大作业上交的项目个人报告pdf以及tex源码
 ### [source](https://github.com/SankHyan24/pacuman/tree/master/sourcecode): 项目源代码. 由于只让用C和DevC++来写, 所以只用了C
 ## 关于bug
-很遗憾, 由于作者能力有限, 游戏存在一个奇怪的bug. 游戏有一定可能会在超过第二次的冒险中出现秒退的情况g. 具体原因可能与所使用的图形库有关. 作者弄不懂图形库, 只会用, 所以至今没找到哪里出了问题.
+很遗憾, 由于作者能力有限, 游戏存在一个奇怪的bug. 游戏有一定可能会在超过第二次的冒险中出现秒退的情况. 具体原因可能与所使用的图形库有关. 作者弄不懂图形库, 只会用, 所以至今没找到哪里出了问题.
