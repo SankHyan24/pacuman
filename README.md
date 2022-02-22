@@ -32,11 +32,11 @@ make
 
 - 首先进入游戏。如果第一次开始游戏，会先进入帮助界面，阅读完游戏介绍即可来到游戏界面。
 
-<img src="C:/Users/Charles Sun/AppData/Roaming/Typora/typora-user-images/image-20220223001116885.png" alt="image-20220223001116885" style="zoom:50%;" />
+<img src="https://s2.loli.net/2022/02/23/lz8fNPrq4VAwkTi.png" alt="image-20220223001116885" style="zoom:50%;" />
 
 - 游戏界面中，选择想要使用的人物(每个人物都有他特定的技能)和想要玩的地图(当然,内置的地图编辑器，可以让你自己随心所欲创作地图).
 
-<img src="C:/Users/Charles Sun/AppData/Roaming/Typora/typora-user-images/image-20220223001239703.png" alt="image-20220223001239703" style="zoom:50%;" />
+<img src="https://s2.loli.net/2022/02/23/q3d2HubkngPMyeQ.png" alt="image-20220223001239703" style="zoom:50%;" />
 
 - “Map Editor”是地图编辑器，选择好你想自定义的地图之后，点击“Map Editor”即可自定义地图。按界面下方提示的方法操作，可以改变光标闪烁位置的地图信息.
 
@@ -44,7 +44,7 @@ make
 
 - 选择完毕后, 通过上下左右按键来控制吃豆人的方向, 吃掉足够多的豆子, 并与四只不同性格的鬼保持一定距离.
 
-<img src="C:/Users/Charles Sun/AppData/Roaming/Typora/typora-user-images/image-20220223002258327.png" alt="image-20220223002258327" style="zoom:50%;" />
+<img src="https://s2.loli.net/2022/02/23/yulToDWUGC4Pr1K.png" alt="image-20220223002258327" style="zoom:50%;" />
 
 - 游戏中的两个人物具有可释放的技能, 左侧能量栏会记录你的技能能量(如果你的人物有技能的话).如果能量栏满且在闪烁状态, 你便可以按下空格键释放技能. 吃掉豆子可以帮助你重新恢复能量.
 
